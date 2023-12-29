@@ -115,3 +115,6 @@ python manage.py runserver
 Ouvrez votre navigateur et accédez à http://localhost:8000 pour voir le résultat.
 ## Conclusion
 Félicitations ! Vous avez créé un petit projet avec le framework Django en Python. Explorez davantage Django pour ajouter des fonctionnalités supplémentaires à votre application.
+
+## License
+MatrixTera
