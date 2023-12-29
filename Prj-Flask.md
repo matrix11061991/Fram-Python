@@ -6,15 +6,15 @@ L'objectif de cette activité pratique est de créer un projet Web simple en uti
 * Python installé sur la machine
 * Connaissance de base en programmation Python
 ## Étapes
-**Étape 1: Installation de Flask**
+**Étape 1: Installation de Flask**  
 Assurez-vous que Flask est installé en exécutant la commande suivante dans votre terminal ou invite de commande :
 ```bash
 pip install Flask
 ```
-**Étape 2: Structure du Projet**
+**Étape 2: Structure du Projet**  
 Créez un dossier pour votre projet. À l'intérieur, créez le fichier principal app.py.
 
-**Étape 3: Configuration de l'Application**
+**Étape 3: Configuration de l'Application**  
 Ouvrez le fichier app.py et ajoutez le code suivant pour configurer une application Web simple avec **Flask** :
 ```python
 from flask import Flask, render_template
@@ -28,7 +28,7 @@ def index():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-**Étape 4:  Ajout de Pages Dynamiques**
+**Étape 4:  Ajout de Pages Dynamiques**  
 Créez un dossier templates/ pour stocker les fichiers HTML. À l'intérieur, créez un fichier **index.html** :
 ```html
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ def index():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-**Étape 5: Exécution de l'Application**
+**Étape 5: Exécution de l'Application**  
 Exécutez l'application en lançant le script **app.py**. Ouvrez votre navigateur et accédez à http://localhost:8080 pour voir le résultat.
 
 ## Conclusion
