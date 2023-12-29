@@ -50,17 +50,17 @@ DATABASES = {
 }
 ```
 
-**Étape 6: Exécution de Migrations**  
+**Étape 6: Exécution de Migrations**    
 Dans le terminal, exécutez les migrations pour créer la base de données :
 ```bash
 python manage.py migrate
 ```
-**Étape 7: Création d'une Application**  
+**Étape 7: Création d'une Application**   
 Créez une nouvelle application dans le projet :
 ```bash
 python manage.py startapp monapp
 ```
-**Étape 8: Ajout d'une Page Dynamique**  
+**Étape 8: Ajout d'une Page Dynamique**    
 Modifiez le fichier **views.py** dans le répertoire **monapp** :
 ```python
 from django.shortcuts import render
@@ -85,7 +85,7 @@ Créez un dossier templates dans le répertoire **monapp** et à l'intérieur, c
 </html>
 ```
 
-**Étape 9: Configuration des URLs de l'Application**  
+**Étape 9: Configuration des URLs de l'Application**    
 Modifiez le fichier urls.py dans le répertoire **monapp** :
 ```python
 from django.urls import path
@@ -96,7 +96,7 @@ urlpatterns = [
 ]
 ```
 
-**Étape 10: Configuration des URLs Principales**  
+**Étape 10: Configuration des URLs Principales**    
 Modifiez le fichier **urls.py** dans le répertoire monprojet :
 ```python
 from django.contrib import admin
@@ -107,7 +107,7 @@ urlpatterns = [
     path('', include('monapp.urls')),
 ]
 ```
-**Étape 11: Exécution du Serveur**  
+**Étape 11: Exécution du Serveur**    
 Dans le terminal, exécutez le serveur Django :
 ```bash
 python manage.py runserver
