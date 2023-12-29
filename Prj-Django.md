@@ -6,17 +6,17 @@ L'objectif de cette activité pratique est de créer un projet Web simple en uti
 * Python installé sur la machine
 * Connaissance de base en programmation Python
 ## Étapes
-**Étape 1: Installation de Django**
+**Étape 1: Installation de Django**  
 Assurez-vous que Django est installé en exécutant la commande suivante dans votre terminal ou invite de commande :
 ```bash
 pip install Django
 ```
-**Étape 2: Création du Projet**
+**Étape 2: Création du Projet**  
 Créez un dossier pour votre projet. À l'intérieur, ouvrez le terminal et exécutez la commande suivante pour créer un nouveau projet Django :
 ```bash
 django-admin startproject monprojet
 ```
-**Étape 3: Configuration de l'Application**
+**Étape 3: Configuration de l'Application**  
 Entrez dans le répertoire du projet :
 ```bash
 cd monprojet
@@ -29,7 +29,7 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Bienvenue sur la page d'accueil!")
 ```
-**Étape 4:  Configuration des URLs**
+**Étape 4:  Configuration des URLs**  
 Ouvrez le fichier **urls.py** dans le répertoire monprojet et configurez les URLs :
 ```python
 from django.urls import path
@@ -39,7 +39,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 ```
-**Étape 5: Configuration de la Base de Données**
+**Étape 5: Configuration de la Base de Données**  
 Ouvrez le fichier settings.py dans le répertoire monprojet. Dans la section DATABASES, configurez la base de données SQLite :
 ```python
 DATABASES = {
@@ -50,17 +50,17 @@ DATABASES = {
 }
 ```
 
-**Étape 6: Exécution de Migrations**
+**Étape 6: Exécution de Migrations**  
 Dans le terminal, exécutez les migrations pour créer la base de données :
 ```bash
 python manage.py migrate
 ```
-**Étape 7: Création d'une Application**
+**Étape 7: Création d'une Application**  
 Créez une nouvelle application dans le projet :
 ```bash
 python manage.py startapp monapp
 ```
-**Étape 8: Ajout d'une Page Dynamique**
+**Étape 8: Ajout d'une Page Dynamique**  
 Modifiez le fichier **views.py** dans le répertoire **monapp** :
 ```python
 from django.shortcuts import render
@@ -85,7 +85,7 @@ Créez un dossier templates dans le répertoire **monapp** et à l'intérieur, c
 </html>
 ```
 
-**Étape 9: Configuration des URLs de l'Application**
+**Étape 9: Configuration des URLs de l'Application**  
 Modifiez le fichier urls.py dans le répertoire **monapp** :
 ```python
 from django.urls import path
@@ -96,7 +96,7 @@ urlpatterns = [
 ]
 ```
 
-**Étape 10: Configuration des URLs Principales**
+**Étape 10: Configuration des URLs Principales**  
 Modifiez le fichier **urls.py** dans le répertoire monprojet :
 ```python
 from django.contrib import admin
@@ -107,7 +107,7 @@ urlpatterns = [
     path('', include('monapp.urls')),
 ]
 ```
-**Étape 11: Exécution du Serveur**
+**Étape 11: Exécution du Serveur**  
 Dans le terminal, exécutez le serveur Django :
 ```bash
 python manage.py runserver
