@@ -7,7 +7,7 @@ L'objectif de cette activité pratique est de créer un projet Web simple en uti
 ## Étapes
 **Étape 1: Installation de Bottle**
 Assurez-vous que Bottle est installé en exécutant la commande suivante dans votre terminal ou invite de commande :
-```bash
+```sh
 pip install bottle
 ```
 **Étape 2: Structure du Projet**
