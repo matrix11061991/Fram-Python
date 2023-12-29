@@ -63,4 +63,6 @@ Exécutez l'application en lançant le script app.py. Ouvrez votre navigateur et
 
 ## Conclusion
 Félicitations ! Vous avez créé un petit projet Web avec CherryPy en Python. Explorez davantage **CherryPy** pour ajouter des fonctionnalités supplémentaires à votre application.
+## License
+MatrixTera
 
