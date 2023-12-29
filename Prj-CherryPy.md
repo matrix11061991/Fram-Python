@@ -27,14 +27,37 @@ class HelloWorld:
 
 if __name__ == '__main__':
     cherrypy.quickstart(HelloWorld())
-
 ```
 **Étape 4: Ajout de Pages HTML**
 Créez un fichier HTML dans le dossier templates/. Par exemple, index.html :
-
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+</head>
+<body>
+    <h1>Bienvenue sur la page d'accueil!</h1>
+</body>
+</html>
+```
 **Étape 5: Intégration des Pages HTML**
 Modifiez la méthode index dans app.py pour renvoyer le contenu du fichier HTML :
+```python
+import cherrypy
 
+class HelloWorld:
+    @cherrypy.expose
+    def index(self):
+        with open('templates/index.html', 'r') as file:
+            return file.read()
+
+if __name__ == '__main__':
+    cherrypy.quickstart(HelloWorld())
+```
 **Étape 6: Exécution de l'Application**
 Exécutez l'application en lançant le script app.py. Ouvrez votre navigateur et accédez à http://localhost:8080 pour voir le résultat.
 
