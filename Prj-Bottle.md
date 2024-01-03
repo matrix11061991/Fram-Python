@@ -1,6 +1,6 @@
 # Fiche d'Activité Pratique : Création d'un Petit Projet avec Bottle Framework
 ## Objectif
-L'objectif de cette activité pratique est de créer un projet Web simple en utilisant le framework Bottle en Python. À la fin de cette activité, les participants auront mis en place un serveur Web basique avec quelques routes.
+L'objectif de cette activité pratique est de créer un projet Web simple en utilisant le framework **Bottle** en Python. À la fin de cette activité, les participants auront mis en place un serveur Web basique avec quelques routes.
 ## Prérequis  
 * Python installé sur la machine
 * Connaissance de base en programmation Python
