@@ -12,7 +12,7 @@ Assurez-vous que Flask est installé en exécutant la commande suivante dans vot
 pip install Flask
 ```
 **Étape 2: Structure du Projet**  
-Créez un dossier pour votre projet. À l'intérieur, créez le fichier principal app.py.
+Créez un dossier pour votre projet. À l'intérieur, créez le fichier principal **app.py**.
 
 **Étape 3: Configuration de l'Application**  
 Ouvrez le fichier app.py et ajoutez le code suivant pour configurer une application Web simple avec **Flask** :
