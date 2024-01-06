@@ -1,9 +1,12 @@
 ## Etape 1 - Installer Bottle : 
 Si vous n'avez pas encore installé Bottle, vous pouvez le faire en utilisant pip :
+```bash
 pip install bottle
+```
 
 ## Etape 2 - Créer la structure du projet : 
 Organisez votre projet avec une structure de fichiers basique. Par exemple :
+```bash
 /le_nom_de_votre_application
 ├── app.py
 ├── static
@@ -13,9 +16,11 @@ Organisez votre projet avec une structure de fichiers basique. Par exemple :
 │       └── script.js
 └── views
     └── index.tpl
+```
 
 ## Etape 3 - Écrire le code de l'application : 
 Créez votre fichier app.py avec le code suivant :
+```python
 from bottle import Bottle, run, template, static_file
 
 app = Bottle()
@@ -30,11 +35,12 @@ def server_static(filepath):
 
 if __name__ == '__main__':
     run(app, host='localhost', port=8080, debug=True)
-
+```
 Dans ce code, une route principale ('/') est définie pour renvoyer un modèle appelé 'index'. Une autre route ('/static/') est définie pour servir des fichiers statiques tels que des fichiers CSS et JS depuis le répertoire 'static'.
 
 ## Etape 4 - Écrire le modèle : 
 Créez un fichier views/index.tpl avec le contenu suivant :
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +54,7 @@ Créez un fichier views/index.tpl avec le contenu suivant :
     <script src="/static/js/script.js"></script>
 </body>
 </html>
+```
 
 
 
