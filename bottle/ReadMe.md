@@ -55,6 +55,34 @@ Créez un fichier views/index.tpl avec le contenu suivant :
 </body>
 </html>
 ```
+## Etape 5 - Ajouter des fichiers CSS et JS : 
+Ajoutez vos fichiers CSS (style.css) et JS (script.js) dans les répertoires respectifs sous le dossier static.
+**static/css/style.css :**
+```css
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+```
+**static/js/script.js:**
+```javascript
+console.log('Script loaded.');
+```
+## Etape 6 - Exécuter l'application : 
+Lancez votre application en exécutant le fichier app.py :
+```bash
+python app.py
+```
+Votre application sera accessible à l'adresse http://localhost:8080/. Vous devriez voir le message "Bienvenue sur ma application!" avec le style CSS appliqué et le script JavaScript exécuté.
+
+C'est tout ! Vous avez maintenant une application web simple avec le framework Bottle, intégrant des fichiers CSS et JS. Vous pouvez bien sûr étendre votre application en ajoutant plus de fonctionnalités et en améliorant le design.
+
+
+
 
 
 
