@@ -26,7 +26,7 @@ if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True)
 ```
 **Étape 4:  Ajout de Pages Dynamiques**  
-Modifiez la méthode index dans app.py pour renvoyer une page HTML dynamique :
+Modifiez la méthode index dans **app.py** pour renvoyer une page HTML dynamique :
 ```python
 from bottle import route, run, template
 
