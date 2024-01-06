@@ -29,7 +29,7 @@ if __name__ == '__main__':
     cherrypy.quickstart(HelloWorld())
 ```
 **Étape 4: Ajout de Pages HTML**  
-Créez un fichier HTML dans le dossier templates/. Par exemple, index.html :
+Créez un fichier HTML dans le dossier **templates/**. Par exemple, index.html :
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ Créez un fichier HTML dans le dossier templates/. Par exemple, index.html :
 </html>
 ```
 **Étape 5: Intégration des Pages HTML**  
-Modifiez la méthode index dans app.py pour renvoyer le contenu du fichier HTML :
+Modifiez la méthode index dans **app.py** pour renvoyer le contenu du fichier HTML :
 ```python
 import cherrypy
 
