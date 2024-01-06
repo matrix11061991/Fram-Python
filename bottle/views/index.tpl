@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <h1>Bienvenue sur mon application!</h1>
+    <h1>Bienvenue sur ma page!</h1>
     <script src="/static/js/script.js"></script>
 </body>
 </html>
