@@ -60,6 +60,14 @@ Exécutez l'application en lançant le script **app.py**. Ouvrez votre navigateu
 Félicitations ! Vous avez créé un petit projet Web avec le framework Bottle en Python. Explorez davantage Bottle pour ajouter des fonctionnalités supplémentaires à votre application.
 
 ## License
-MatrixTera
+```sh
+                                                                        __  __       _        _          _______             
+                                                                       |  \/  |     | |      (_)        |__   __|            
+                                                                       | \  / | __ _| |_ _ __ ___  __      | | ___ _ __ __ _ 
+                                                                       | |\/| |/ _` | __| '__| \ \/ /      | |/ _ \ '__/ _` |
+                                                                       | |  | | (_| | |_| |  | |>  <       | |  __/ | | (_| |
+                                                                       |_|  |_|\__,_|\__|_|  |_/_/\_\      |_|\___|_|  \__,_|   🇲🇬
+```
+                                                       
 
 
