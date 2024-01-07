@@ -55,9 +55,15 @@
        _/ |             __/ |      
       |__/             |___/       
 ```
-- [Django](Prj-Django.md)  
-  - Sous-élément A
-  - Sous-élément B
+- [Django](Prj-Django.md)  est un framework web open source écrit en Python qui facilite le développement rapide d'applications web robustes et maintenables. Il suit le modèle architectural MVC (Modèle-Vue-Contrôleur) ou, plus précisément, le modèle MTV (Modèle-Template-Vue), propre à Django. Voici quelques caractéristiques et utilisations clés de Django :
+  - **Développement rapide :** L'un des principaux objectifs de Django est de faciliter le développement rapide d'applications web. Il fournit un ensemble de fonctionnalités prêtes à l'emploi pour gérer des tâches courantes, permettant aux développeurs de se concentrer sur la logique spécifique de leur application.
+  - **Architecture MTV :** Django utilise le modèle MTV, où le Modèle représente la logique métier et les données, le Template gère l'interface utilisateur, et la Vue gère l'interaction entre le Modèle et le Template. Cela favorise la séparation des préoccupations et la maintenabilité du code.
+  - **ORM (Object-Relational Mapping) :** Django inclut un ORM puissant qui permet aux développeurs de travailler avec des bases de données relationnelles en utilisant des objets Python au lieu de SQL brut. Cela simplifie la manipulation des données et rend le code plus portable entre différents systèmes de gestion de bases de données.
+  - **Administration automatique :** Django fournit une interface d'administration automatique générée à partir de vos modèles de base de données. Cela facilite la gestion et la visualisation des données sans avoir à créer une interface d'administration personnalisée.
+  - **Sécurité intégrée :** Django intègre de nombreuses fonctionnalités de sécurité par défaut, telles que la protection contre les attaques CSRF (Cross-Site Request Forgery), l'échappement automatique des données pour éviter les attaques XSS (Cross-Site Scripting), etc.
+  - **Système de gestion des URL :** Django propose un système de gestion des URL puissant et flexible, permettant de définir des schémas d'URL lisibles et modulaires.
+  - **Extensibilité :** Django est extensible avec des modules tiers (applications) qui peuvent être réutilisés dans différentes applications. Cela favorise la modularité et la réutilisabilité du code.
+  - **Communauté active :** Django bénéficie d'une communauté de développeurs active, avec une documentation exhaustive, des plugins tiers, et un écosystème de soutien.
 
 ```sh
   ______ _           _    
