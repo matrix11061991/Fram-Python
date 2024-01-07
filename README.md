@@ -8,7 +8,7 @@
                                                                        __/ |                      
                                                                       |___/                       
 ```
-# Fiche d'activité pratique sur quelques framework Python:
+# Fiche d'activité pratique sur quelques framework Python 🥂:
 ```sh
   ____        _   _   _      
  |  _ \      | | | | | |     
@@ -18,7 +18,7 @@
  |____/ \___/ \__|\__|_|\___|
 ```                          
 - [Bottle](Prj-Bottle.md)
-  est un micro-framework web pour le langage de programmation Python. Il est conçu pour être simple, léger et facile à utiliser, tout en offrant les fonctionnalités nécessaires pour développer des applications web de petite à moyenne envergure.  Voici quelques caractéristiques et utilités de Bottle :
+  est un micro-framework web pour le langage de programmation Python. Il est conçu pour être simple, léger et facile à utiliser, tout en offrant les fonctionnalités nécessaires pour développer des applications web de petite à moyenne envergure.  Voici quelques caractéristiques et utilités de Bottle ☕️:
   - **Micro-framework :**  
     Bottle est considéré comme un micro-framework car il fournit le strict nécessaire pour développer des applications web. Il n'inclut pas de composants excessifs, ce qui le rend simple et facile à comprendre.
   - **Routing :**  
@@ -30,7 +30,7 @@
   - **Aucune dépendance externe :**  
     Bottle ne nécessite pas l'installation d'autres bibliothèques ou composants tiers, ce qui facilite son utilisation et son déploiement.
   - **Simple à intégrer :**  
-    En raison de sa nature légère, Bottle est facile à intégrer avec d'autres bibliothèques et frameworks Python. Vous pouvez l'utiliser pour construire des composants web dans le cadre de projets plus importants.
+    💡 En raison de sa nature légère, Bottle est facile à intégrer avec d'autres bibliothèques et frameworks Python. Vous pouvez l'utiliser pour construire des composants web dans le cadre de projets plus importants.
   - **Applications RESTful :**  
     Bottle est souvent utilisé pour créer des applications RESTful, où les routes correspondent à des opérations sur des ressources.
 ```sh
@@ -100,7 +100,7 @@
   - **Micro-framework :**  
     Flask est souvent appelé un "micro-framework" parce qu'il offre le strict nécessaire pour développer des applications web. Cela signifie qu'il n'inclut que le minimum vital pour maintenir la simplicité et permettre aux développeurs d'ajouter des fonctionnalités spécifiques selon leurs besoins.
   - **acilité d'utilisation :**  
-    Flask est connu pour sa facilité d'utilisation. Il propose une syntaxe simple et intuitive qui permet aux développeurs de se concentrer sur la logique métier plutôt que sur des détails complexes de configuration.
+    ⚒ Flask est connu pour sa facilité d'utilisation. Il propose une syntaxe simple et intuitive qui permet aux développeurs de se concentrer sur la logique métier plutôt que sur des détails complexes de configuration.
   - **Flexibilité :**  
     Flask offre une grande flexibilité dans la manière dont vous structurez votre application. Il ne force pas une structure particulière et vous permet de choisir les bibliothèques et les outils que vous souhaitez utiliser.
   - **Extensibilité :**  
