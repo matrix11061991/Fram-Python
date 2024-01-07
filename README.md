@@ -74,15 +74,16 @@
  |_|    |_|\__,_|___/_|\_\
                           
 ```
-- [Flask](Prj-Flask.md)  
-  - Sous-élément A
-  - Sous-élément B
-```sh
-
-```
-- [Pyramid](Prj-Pyramid.md)  
-  - Sous-élément A
-  - Sous-élément B
+- [Flask](Prj-Flask.md)  est un framework web léger et open source écrit en Python. Conçu pour être simple et extensible, Flask permet de développer rapidement des applications web avec une grande flexibilité. Voici quelques caractéristiques et utilisations clés de Flask :
+  - **Micro-framework :** Flask est souvent appelé un "micro-framework" parce qu'il offre le strict nécessaire pour développer des applications web. Cela signifie qu'il n'inclut que le minimum vital pour maintenir la simplicité et permettre aux développeurs d'ajouter des fonctionnalités spécifiques selon leurs besoins.
+  - **acilité d'utilisation :** Flask est connu pour sa facilité d'utilisation. Il propose une syntaxe simple et intuitive qui permet aux développeurs de se concentrer sur la logique métier plutôt que sur des détails complexes de configuration.
+  - **Flexibilité :** Flask offre une grande flexibilité dans la manière dont vous structurez votre application. Il ne force pas une structure particulière et vous permet de choisir les bibliothèques et les outils que vous souhaitez utiliser.
+  - **Extensibilité :** Bien que Flask soit léger, il est extensible. Vous pouvez ajouter des fonctionnalités supplémentaires grâce à des extensions Flask ou intégrer des bibliothèques tierces pour répondre à des besoins spécifiques.
+  - **Jinja2 pour les templates :** Flask utilise le moteur de templates Jinja2, ce qui permet de générer des pages HTML de manière dynamique en intégrant des variables et des structures de contrôle dans les templates.
+  - **Système de routage :** Flask propose un système de routage simple pour définir des routes URL et associer des fonctions de gestion à ces routes. Cela permet de gérer facilement les différentes pages de l'application.
+  - **Intégration avec Werkzeug :** Flask s'appuie sur Werkzeug, une bibliothèque WSGI (Web Server Gateway Interface) pour gérer les aspects bas niveau des connexions HTTP. Cela garantit une gestion robuste des requêtes et des réponses.
+  - **Serveur de développement intégré :** Flask inclut un serveur web de développement pour faciliter le processus de développement et de test.
+  - **Applications RESTful :** Flask est souvent utilisé pour développer des applications RESTful, où les routes correspondent à des opérations sur des ressources.
 ```sh
   _____                           _     _ 
  |  __ \                         (_)   | |
@@ -93,6 +94,17 @@
          __/ |                            
         |___/                             
 ```
+- [Pyramid](Prj-Pyramid.md)  st un framework web open source écrit en Python qui se situe entre les frameworks web micro et les frameworks web full-stack. Il est conçu pour être souple, extensible et adapté à une variété de types d'applications, du plus petit projet au plus grand. Voici quelques caractéristiques et utilisations clés de Pyramid :
+  - **Flexibilité :** L'une des caractéristiques principales de Pyramid est sa grande flexibilité. Il n'impose pas de structure particulière à votre application, vous permettant de choisir comment organiser votre code et quelles bibliothèques utiliser.
+  - **Évolutivité :** Pyramid est capable de gérer des applications de toutes tailles, des plus petites aux plus grandes. Il offre des outils pour structurer votre application de manière modulaire afin de faciliter la gestion de la complexité à mesure que votre projet évolue.
+  - **Modularité :** Pyramid est basé sur le concept de modularité. Vous pouvez ajouter des fonctionnalités à votre application en utilisant des modules (ou "packages") et des composants réutilisables.
+  - **Choix de moteurs de templates :** Pyramid n'impose pas un moteur de templates particulier. Vous pouvez choisir le moteur de templates qui convient le mieux à votre projet, que ce soit Jinja2, Mako, ou tout autre moteur compatible.
+  - **Authentification et autorisation :** Pyramid fournit des outils pour gérer l'authentification et l'autorisation dans votre application. Vous pouvez implémenter des systèmes d'authentification personnalisés et définir des politiques d'autorisation complexes.
+  - **Intégration avec des systèmes existants :** Pyramid peut être utilisé pour construire de nouvelles applications ou pour ajouter des fonctionnalités à des applications existantes. Il offre une flexibilité d'intégration avec des systèmes et des bibliothèques tiers.
+  - **Système de routage :** Pyramid propose un système de routage flexible qui vous permet de définir des routes URL et d'associer des vues à ces routes. Cela facilite la gestion des requêtes HTTP.
+  - **Prise en charge de WebSocket :** Pyramid prend en charge WebSocket, ce qui permet de construire des applications temps réel et interactives.
+  - **Documentation approfondie :** Pyramid dispose d'une documentation approfondie qui facilite l'apprentissage et le développement avec le framework.
+
 
 
 
