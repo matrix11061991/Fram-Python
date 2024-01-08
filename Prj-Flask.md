@@ -1,13 +1,13 @@
-# Fiche d'Activité Pratique :  Création d'un Petit Projet avec Flask Framework
+# Fiche d'Activité Pratique :  Création d'un petit projet avec Flask framework
 ## Objectif
-L'objectif de cette activité pratique est de créer un projet Web simple en utilisant le framework Flask en Python. À la fin de cette activité, les participants auront mis en place un serveur Web basique avec quelques routes.
+L'objectif de cette activité pratique est de créer un projet Web simple en utilisant le framework **Flask** en Python. À la fin de cette activité, les participants auront mis en place un serveur Web basique avec quelques routes.
 
 ## Prérequis
 * Python installé sur la machine
 * Connaissance de base en programmation Python
 ## Étapes
 **Étape 1: Installation de Flask**  
-Assurez-vous que Flask est installé en exécutant la commande suivante dans votre terminal ou invite de commande :
+Assurez-vous que **Flask** est installé en exécutant la commande suivante dans votre terminal ou invite de commande :
 ```bash
 pip install Flask
 ```
@@ -15,7 +15,7 @@ pip install Flask
 Créez un dossier pour votre projet. À l'intérieur, créez le fichier principal **app.py**.
 
 **Étape 3: Configuration de l'Application**  
-Ouvrez le fichier app.py et ajoutez le code suivant pour configurer une application Web simple avec **Flask** :
+Ouvrez le fichier **app.py** et ajoutez le code suivant pour configurer une application Web simple avec **Flask** :
 ```python
 from flask import Flask, render_template
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 **Étape 4:  Ajout de Pages Dynamiques**  
-Créez un dossier templates/ pour stocker les fichiers HTML. À l'intérieur, créez un fichier **index.html** :
+Créez un dossier **templates/** pour stocker les fichiers HTML. À l'intérieur, créez un fichier **index.html** :
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ Créez un dossier templates/ pour stocker les fichiers HTML. À l'intérieur, cr
 </body>
 </html>
 ```
-Modifiez ensuite le fichier app.py pour utiliser ce modèle :
+Modifiez ensuite le fichier **app.py** pour utiliser ce modèle :
 ```python
 from flask import Flask, render_template
 
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 Exécutez l'application en lançant le script **app.py**. Ouvrez votre navigateur et accédez à http://localhost:8080 pour voir le résultat.
 
 ## Conclusion
-Félicitations ! Vous avez créé un petit projet Web avec le framework Flask en Python. Explorez davantage Flask pour ajouter des fonctionnalités supplémentaires à votre application.
+Félicitations ! Vous avez créé un petit projet Web avec le framework **Flask** en Python. Explorez davantage Flask pour ajouter des fonctionnalités supplémentaires à votre application.
 
 
 
