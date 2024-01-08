@@ -5,7 +5,7 @@
 (__) (____|__)(__|___(_)\_)         (_/\/\_|____|_)\_|____|__) (_)\_|_____)____)(____)(__)
 ```
 ## Etape 1 - Installer Flask : 
-Si vous n'avez pas encore installé Flask, vous pouvez le faire en utilisant pip :
+Si vous n'avez pas encore installé Flask, vous pouvez le faire en utilisant **pip** :
 ```bash
 pip install flask
 ```
@@ -47,10 +47,10 @@ def about():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-Dans ce code, une route principale ('/') est définie pour renvoyer un modèle appelé 'index'. Une autre route ('/static/') est définie pour servir des fichiers statiques tels que des fichiers CSS et JS depuis le répertoire 'static'.
+Dans ce code, une route principale **('/')** est définie pour renvoyer un modèle appelé 'index'. Une autre route **('/static/')** est définie pour servir des fichiers statiques tels que des fichiers CSS et JS depuis le répertoire 'static'.
 
 ## Etape 4 - Écrire le modèle : 
-Créez un fichier templates /index.html avec le contenu suivant :
+Créez un fichier **templates /index.html** avec le contenu suivant :
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +69,7 @@ Créez un fichier templates /index.html avec le contenu suivant :
 </body>
 </html>
 ```
-Créez un fichier templates /about.html avec le contenu suivant :
+Créez un fichier **templates /about.html** avec le contenu suivant :
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +111,7 @@ img {
 console.log('Script loaded.');
 ```
 ## Etape 6 - Exécuter l'application : 
-Lancez votre application en exécutant le fichier app.py :
+Lancez votre application en exécutant le fichier **app.py** :
 ```bash
 python app.py
 ```
