@@ -145,6 +145,6 @@
   - **Documentation approfondie :**  
     Pyramid dispose d'une documentation approfondie qui facilite l'apprentissage et le développement avec le framework.
 
-Voir aussi [les frameworks python destinée à l'apprentissage automatique]([Prj-Bottle.md](https://github.com/matrix11061991/Data-Science/tree/main)https://github.com/matrix11061991/Data-Science/tree/main](https://github.com/matrix11061991/Data-Science/blob/main/README.md)https://github.com/matrix11061991/Data-Science/blob/main/README.md)
+Voir aussi [Texte du lien](https://github.com//matrix11061991/Data-Science/blob/main/README.md)
 
 
