@@ -145,6 +145,6 @@
   - **Documentation approfondie :**  
     Pyramid dispose d'une documentation approfondie qui facilite l'apprentissage et le développement avec le framework.
 
-Voir aussi [les bibliothèques libres Python destinée à l'apprentissage automatique](https://github.com//matrix11061991/Data-Science/blob/main/README.md)
+Voir aussi les bibliothèques libres Python destinée à [l'apprentissage automatique](https://github.com//matrix11061991/Data-Science/blob/main/README.md)
 
 
