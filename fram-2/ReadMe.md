@@ -736,22 +736,31 @@ Dans ce code, une route principale **('/')** est définie pour renvoyer un modè
 ```
 Créez un fichier **templates /index.html** avec le contenu suivant :
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Mon Projet Flask</title>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-    <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo">
-    <a href="{{ url_for('about') }}">À propos de nous</a>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                    <!-- Logo Component -->
+                    {% include 'components/logo.html' %}
+
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <!-- Registration Form Component -->
+                            {% include 'components/registration_form.html' %}
+                        </div>
+                    </div>
+
+                    <div class="credits">
+                        <!-- Credits content here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
 ```
 Créez un fichier **templates /about.html** avec le contenu suivant :
 ```html
