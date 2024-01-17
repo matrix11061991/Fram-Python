@@ -812,7 +812,17 @@ Visitez http://127.0.0.1:5000/ dans votre navigateur pour voir votre application
 
 C'est tout ! Vous avez maintenant une application web simple avec le framework flask, intégrant des fichiers CSS et JS. Vous pouvez bien sûr étendre votre application en ajoutant plus de fonctionnalités et en améliorant le design.
 
-
+## Code SQL : 
+```sql
+CREATE TABLE utilisateurs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    prenom VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    avatar VARCHAR(255) NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL
+);
+```
 
 
 
