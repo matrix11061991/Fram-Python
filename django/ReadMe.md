@@ -18,21 +18,44 @@ Le but de cette activité est de permettre aux apprenants de créer un simple CR
 ```sh
 django-admin startproject my_project
 ```
-- Allez dans le répertoire du projet en utilisant la commande `cd my_project`.
-- Créez une nouvelle application Django appelée my_app :
+- Allez dans le répertoire du projet en utilisant la commande:
+
 ```sh
-python manage.py startapp my_app
+cd my_project
 ```
-- dfdf
 
 ### 2. Création de l'Application Django
 
-- Utilisez la commande `python manage.py startapp nom_de_l_application` pour créer une nouvelle application Django.
-- Allez dans le répertoire de l'application en utilisant la commande `cd nom_de_l_application`.
-
+- Créez une nouvelle application Django appelée **my_app** :
+```sh
+python manage.py startapp my_app
+```
+- Ouvrez le fichier **my_project/settings.py** et ajoutez la configuration de la base de données:
+```python
+# my_project/settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'rascof',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'autocommit': True,
+            'use_pure': True,
+            'charset': 'utf8mb4',
+        },
+    },
+}
+```
+- Pour plus tard, ajoutez egalement la ligne:
+```python
+AUTH_USER_MODEL = 'my_app.UserProfile'
+```
 ### 3. Définition du Modèle
 
-- Dans le fichier `models.py` de l'application, définissez un modèle simple pour représenter une entité (par exemple, une tâche à faire).
+- Modifiez le fichier **my_app/models.py** pour définir le modèle de l'utilisateur avec les champs spécifiés.
 
 ```python
 from django.db import models
