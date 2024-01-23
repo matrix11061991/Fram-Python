@@ -3,7 +3,7 @@
 
 ## Objectif de l'Activité
 
-Le but de cette activité est de permettre aux apprenants de créer un simple CRUD (Create, Read, Update, Delete) en utilisant le framework Django avec une base de données MySQL.
+Le but de cette activité est de permettre aux apprenants de créer un simple en utilisant le framework Django avec une base de données MySQL.
 
 ## Prérequis
 
@@ -58,40 +58,233 @@ AUTH_USER_MODEL = 'my_app.UserProfile'
 - Modifiez le fichier **my_app/models.py** pour définir le modèle de l'utilisateur avec les champs spécifiés.
 
 ```python
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
-class Task(models.Model):
-    title = models.CharField(max_length=200)
+class UserProfileManager(BaseUserManager):
+    def create_user(self, email, username, password=None, **extra_fields):
+        if not email:
+            raise ValueError('The Email field must be set')
+        email = self.normalize_email(email)
+        user = self.model(email=email, username=username, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, username, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        return self.create_user(email, username, password, **extra_fields)
+
+class UserProfile(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(max_length=255, unique=True)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    job = models.CharField(max_length=255)
+    telephone = models.CharField(max_length=15)
+    ville = models.CharField(max_length=255)
     description = models.TextField()
-    completed = models.BooleanField(default=False)
+
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+
+    objects = UserProfileManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
 
     def __str__(self):
-        return self.title
+        return self.username
+```
+- Enregistrez le modèle en ajoutant 'my_app' à la liste INSTALLED_APPS dans **my_project/settings.py**:
+```sh
+# my_project/settings.py
+INSTALLED_APPS = [
+    # ...
+    'my_app',
+]
 ```
 ### 4. Appliquer les Migrations
 
 - Exécutez les commandes `python manage.py makemigrations` et `python manage.py migrate` pour créer les tables dans la base de données.
 
-### 5. Configuration de la Base de Données MySQL
+### 5. Formulaire
+Créez un formulaire Django pour l'inscription dans **my_app/forms.py**:
+```python
+# my_app/forms.py
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from .models import UserProfile
 
-- Modifiez le fichier `settings.py` pour configurer la base de données MySQL dans la section `DATABASES`.
+class RegistrationForm(UserCreationForm):
+    class Meta:
+        model = UserProfile
+        fields = ['username', 'email', 'password1', 'password2', 'address', 'job', 'telephone', 'ville', 'description']
+
+class LoginForm(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['username', 'email', 'address', 'job', 'telephone', 'ville', 'description']
+```
 
 ### 6. Création des Vues
+Créez une vue pour la page d'accueil avec le formulaire dans my_app/views.py:
+```python
+# my_app/views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from .forms import RegistrationForm, LoginForm, UserProfileForm
 
-- Dans le fichier `views.py` de l'application, créez des vues pour lister, afficher, créer, mettre à jour et supprimer des tâches.
+def home(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = RegistrationForm()
 
+    return render(request, 'home.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = authenticate(request, email=email, password=password)
+
+            if user is not None:
+                login(request, user)
+                # Redirigez l'utilisateur vers la page d'édition de profil après la connexion réussie
+                return redirect('profile_edit')
+            else:
+                # Gestion des erreurs si l'authentification échoue
+                return render(request, 'login.html', {'form': form, 'error_message': 'Invalid email or password.'})
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form})
+
+@login_required
+def profile_edit(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile_edit')  # Redirection vers la même page après la mise à jour
+    else:
+        form = UserProfileForm(instance=request.user)
+
+    return render(request, 'profile_edit.html', {'form': form})
+```
 ### 7. Création des Templates
 
-- Créez des fichiers HTML dans le dossier `templates` de l'application pour chaque vue.
+- Créez des fichiers HTML dans le dossier `templates` de l'application pour chaque vue:
+Pour **my_app/templates/home.html**:
+```html
+<!-- my_app/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <!-- Ajoutez ce lien pour rediriger vers la page de connexion -->
+    <a href="{% url 'user_login' %}">Login</a>
+</body>
+</html>
+```
+Pour **my_app/templates/login.html**:
+```html
+<!-- my_app/templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    
+    <form method="post" action="{% url 'user_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'home' %}">Login</a>
+</body>
+</html>
 
+```
+Pour **my_app/templates/profile_edit.html**:
+```html
+<!-- my_app/templates/profile_edit.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+
+    <form method="post" action="{% url 'profile_edit' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
+```
 ### 8. Configuration des URL
+Configurez les URL pour votre application dans my_app/urls.py :
+```python
+# my_app/urls.py
+# my_app/urls.py
+from django.urls import path
+from .views import home, user_login, profile_edit
 
-- Dans le fichier `urls.py` de l'application, configurez les URL pour utiliser les vues créées.
+urlpatterns = [
+    path('', home, name='home'),
+    path('login/', user_login, name='user_login'),
+    path('profile/edit/', profile_edit, name='profile_edit'),
+]
 
+```
 ### 9. Inclusion des URL dans le Projet
-
 - Dans le fichier `urls.py` du projet, incluez les URL de l'application.
+```python
+# my_project/urls.py
+from django.contrib import admin
+from django.urls import include, path
 
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('my_app.urls')),
+]
+```
 ### 10. Exécution du Serveur
 
 - Exécutez le serveur de développement Django en utilisant la commande `python manage.py runserver`.
