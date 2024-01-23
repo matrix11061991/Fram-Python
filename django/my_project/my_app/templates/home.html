@@ -1,0 +1,19 @@
+<!-- my_app/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <!-- Ajoutez ce lien pour rediriger vers la page de connexion -->
+    <a href="{% url 'user_login' %}">Login</a>
+</body>
+</html>
