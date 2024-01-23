@@ -14,8 +14,16 @@ Le but de cette activité est de permettre aux apprenants de créer un simple CR
 
 ### 1. Création du Projet Django
 
-- Utilisez la commande `django-admin startproject nom_du_projet` pour créer un nouveau projet Django.
-- Allez dans le répertoire du projet en utilisant la commande `cd nom_du_projet`.
+- Créez un nouveau projet Django appelé **my_project** en utilisant la commande suivante dans votre terminal ou invite de commande :
+```sh
+django-admin startproject my_project
+```
+- Allez dans le répertoire du projet en utilisant la commande `cd my_project`.
+- Créez une nouvelle application Django appelée my_app :
+```sh
+python manage.py startapp my_app
+```
+- dfdf
 
 ### 2. Création de l'Application Django
 
