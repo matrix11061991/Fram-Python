@@ -1,9 +1,9 @@
 
-# Fiche d'Activité Pratique - Création d'un CRUD avec Django et MySQL
+# Fiche d'Activité Pratique - Création d'une application simple avec Django et MySQL
 
 ## Objectif de l'Activité
 
-Le but de cette activité est de permettre aux apprenants de créer un simple en utilisant le framework Django avec une base de données MySQL.
+Le but de cette activité est de permettre aux apprenants de créer une application simple en utilisant le framework Django avec une base de données MySQL.
 
 ## Prérequis
 
