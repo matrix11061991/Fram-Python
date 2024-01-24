@@ -299,3 +299,55 @@ urlpatterns = [
 2. Comment les migrations sont-elles utilisées pour mettre à jour la base de données?
 3. Quelle est la différence entre les vues génériques et les vues personnalisées dans Django?
 4. Comment Django gère-t-il les URL dans une application?
+
+# Liste des commandes Django avec leurs descriptions
+1. **django-admin startproject [nom_projet]**
+   - Crée un nouveau projet Django avec le nom spécifié.
+
+2. **python manage.py startapp [nom_application]**
+   - Crée une nouvelle application Django avec le nom spécifié dans le projet.
+
+3. **python manage.py runserver**
+   - Lance le serveur de développement pour le projet.
+
+4. **python manage.py migrate**
+   - Applique toutes les migrations en attente pour mettre à jour la base de données.
+
+5. **python manage.py makemigrations**
+   - Génère de nouvelles migrations en fonction des modifications dans les modèles.
+
+6. **python manage.py createsuperuser**
+   - Crée un superutilisateur qui peut accéder à l'interface d'administration Django.
+
+7. **python manage.py shell**
+   - Ouvre une console interactive basée sur Python pour interagir avec le projet.
+
+8. **python manage.py test [nom_application]**
+   - Exécute les tests pour l'application spécifiée.
+
+9. **python manage.py collectstatic**
+   - Collecte tous les fichiers statiques dans un répertoire pour une utilisation en production.
+
+10. **python manage.py shell_plus**
+    - Ouvre une console interactive améliorée avec des fonctionnalités supplémentaires grâce au package django-extensions.
+
+11. **python manage.py dbshell**
+    - Ouvre une interface de ligne de commande pour la base de données en cours d'utilisation.
+
+12. **python manage.py showmigrations**
+    - Affiche la liste des migrations et indique celles qui ont déjà été appliquées.
+
+13. **python manage.py flush**
+    - Supprime toutes les données de la base de données sans affecter le schéma.
+
+14. **python manage.py runserver [adresse_ip:port]**
+    - Lance le serveur de développement sur une adresse IP et un port spécifiés.
+
+15. **python manage.py check**
+    - Vérifie la configuration du projet pour détecter d'éventuelles erreurs et problèmes.
+
+16. **python manage.py dumpdata > fichier.json**
+    - Exporte les données de la base de données dans un fichier JSON.
+
+17. **python manage.py loaddata fichier.json**
+    - Importe les données depuis un fichier JSON dans la base de données.
