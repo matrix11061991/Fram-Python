@@ -293,12 +293,6 @@ urlpatterns = [
 
 - Accédez à l'application à l'adresse http://127.0.0.1:8000/ dans un navigateur.
 - Testez les fonctionnalités CRUD en ajoutant, modifiant et supprimant des tâches.
-## Questions de Réflexion
-
-1. Quel est le rôle du modèle dans une application Django?
-2. Comment les migrations sont-elles utilisées pour mettre à jour la base de données?
-3. Quelle est la différence entre les vues génériques et les vues personnalisées dans Django?
-4. Comment Django gère-t-il les URL dans une application?
 
 # Liste des commandes Django avec leurs descriptions
 1. **django-admin startproject [nom_projet]**
@@ -351,3 +345,10 @@ urlpatterns = [
 
 17. **python manage.py loaddata fichier.json**
     - Importe les données depuis un fichier JSON dans la base de données.
+
+## Questions de Réflexion
+
+1. Quel est le rôle du modèle dans une application Django?
+2. Comment les migrations sont-elles utilisées pour mettre à jour la base de données?
+3. Quelle est la différence entre les vues génériques et les vues personnalisées dans Django?
+4. Comment Django gère-t-il les URL dans une application?
