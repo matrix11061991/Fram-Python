@@ -33,24 +33,27 @@ python manage.py startapp my_app
 - Ouvrez le fichier **my_project/settings.py** et ajoutez la configuration de la base de données:
 ```python
 # my_project/settings.py
+
+# Configuration de la base de données
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'rascof',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'mysql.connector.django',  # Utilisation du moteur MySQL avec le connecteur Django
+        'NAME': 'rascof',  # Nom de la base de données
+        'USER': 'root',  # Nom d'utilisateur pour se connecter à la base de données
+        'PASSWORD': '',  # Mot de passe pour se connecter à la base de données
+        'HOST': 'localhost',  # Adresse du serveur de base de données (dans ce cas, localhost)
+        'PORT': '3306',  # Port sur lequel le serveur de base de données écoute (dans ce cas, 3306 pour MySQL)
         'OPTIONS': {
-            'autocommit': True,
-            'use_pure': True,
-            'charset': 'utf8mb4',
+            'autocommit': True,  # Activer l'autocommit pour chaque transaction
+            'use_pure': True,  # Utiliser le mode "pur" pour éviter des dépendances supplémentaires
+            'charset': 'utf8mb4',  # Jeu de caractères à utiliser pour la base de données (utf8mb4 pour le support Unicode complet)
         },
     },
 }
 ```
 - Pour plus tard, ajoutez egalement la ligne:
 ```python
+# Spécification du modèle d'utilisateur personnalisé
 AUTH_USER_MODEL = 'my_app.UserProfile'
 ```
 ### 3. Définition du Modèle
@@ -58,26 +61,42 @@ AUTH_USER_MODEL = 'my_app.UserProfile'
 - Modifiez le fichier **my_app/models.py** pour définir le modèle de l'utilisateur avec les champs spécifiés.
 
 ```python
+# models.py
+
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
+# Gestionnaire personnalisé pour le modèle d'utilisateur
 class UserProfileManager(BaseUserManager):
     def create_user(self, email, username, password=None, **extra_fields):
+        # Vérifier si l'adresse e-mail est fournie
         if not email:
             raise ValueError('The Email field must be set')
+        
+        # Normaliser l'adresse e-mail
         email = self.normalize_email(email)
+        
+        # Créer un nouvel utilisateur avec les champs spécifiés
         user = self.model(email=email, username=username, **extra_fields)
+        
+        # Définir le mot de passe pour l'utilisateur
         user.set_password(password)
+        
+        # Sauvegarder l'utilisateur dans la base de données
         user.save(using=self._db)
         return user
 
     def create_superuser(self, email, username, password=None, **extra_fields):
+        # Définir les champs supplémentaires pour un superutilisateur
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
+        # Appeler la méthode create_user pour créer un superutilisateur
         return self.create_user(email, username, password, **extra_fields)
 
+# Modèle d'utilisateur personnalisé
 class UserProfile(AbstractBaseUser, PermissionsMixin):
+    # Champs du modèle d'utilisateur
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=255)
@@ -87,15 +106,21 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     ville = models.CharField(max_length=255)
     description = models.TextField()
 
+    # Champs pour la gestion des autorisations et de l'activation du compte
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
+    # Utilisation du gestionnaire personnalisé
     objects = UserProfileManager()
 
+    # Champ utilisé comme identifiant lors de l'authentification
     USERNAME_FIELD = 'email'
+    
+    # Champs supplémentaires requis lors de la création d'un utilisateur
     REQUIRED_FIELDS = ['username']
 
     def __str__(self):
+        # Méthode pour représenter l'objet sous forme de chaîne
         return self.username
 ```
 - Enregistrez le modèle en ajoutant 'my_app' à la liste INSTALLED_APPS dans **my_project/settings.py**:
@@ -118,19 +143,23 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import UserProfile
 
+# Formulaire d'inscription personnalisé basé sur UserCreationForm
 class RegistrationForm(UserCreationForm):
     class Meta:
-        model = UserProfile
+        model = UserProfile  # Utilisation du modèle UserProfile
         fields = ['username', 'email', 'password1', 'password2', 'address', 'job', 'telephone', 'ville', 'description']
 
+# Formulaire de connexion simple
 class LoginForm(forms.Form):
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField()  # Champ pour l'adresse e-mail
+    password = forms.CharField(widget=forms.PasswordInput)  # Champ pour le mot de passe avec widget de mot de passe
 
+# Formulaire de profil utilisateur basé sur le modèle UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = UserProfile  # Utilisation du modèle UserProfile
         fields = ['username', 'email', 'address', 'job', 'telephone', 'ville', 'description']
+
 ```
 
 ### 6. Création des Vues
@@ -142,23 +171,27 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .forms import RegistrationForm, LoginForm, UserProfileForm
 
+# Vue pour la page d'accueil avec le formulaire d'inscription
 def home(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('home')  # Redirection vers la page d'accueil après l'inscription réussie
     else:
         form = RegistrationForm()
 
     return render(request, 'home.html', {'form': form})
 
+# Vue pour la page de connexion avec le formulaire de connexion
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
+            
+            # Authentification de l'utilisateur
             user = authenticate(request, email=email, password=password)
 
             if user is not None:
@@ -173,6 +206,7 @@ def user_login(request):
 
     return render(request, 'login.html', {'form': form})
 
+# Vue pour la page de modification de profil (accessible uniquement aux utilisateurs connectés)
 @login_required
 def profile_edit(request):
     if request.method == 'POST':
@@ -187,7 +221,7 @@ def profile_edit(request):
 ```
 ### 7. Création des Templates
 
-- Créez des fichiers HTML dans le dossier `templates` de l'application pour chaque vue:
+- Créez des fichiers HTML dans le dossier **templates** de l'application pour chaque vue:
 Pour **my_app/templates/home.html**:
 ```html
 <!-- my_app/templates/home.html -->
@@ -274,7 +308,7 @@ urlpatterns = [
 
 ```
 ### 9. Inclusion des URL dans le Projet
-- Dans le fichier `urls.py` du projet, incluez les URL de l'application.
+- Dans le fichier **urls.py** du projet, incluez les URL de l'application.
 ```python
 # my_project/urls.py
 from django.contrib import admin
