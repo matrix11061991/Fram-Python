@@ -73,5 +73,7 @@ python app.py
 ```
 Vous pouvez utiliser un outil comme Postman ou cURL pour envoyer des requêtes POST à l'URL http://127.0.0.1:5000/register avec les données JSON appropriées.
 
+Lien utile: https://openclassrooms.com/fr/courses/4525361-realisez-un-dashboard-avec-tableau/5774811-creez-une-api-avec-flask
+
 ## Conclusion
 Vous avez créé une API REST avec Flask qui permet l'inscription d'un utilisateur en base de données. N'oubliez pas de gérer les erreurs et d'ajouter des fonctionnalités telles que la validation des champs avant d'ajouter ces fonctionnalités à un projet en production.
