@@ -79,7 +79,7 @@
   - **Administration automatique :**  
     Django fournit une interface d'administration automatique générée à partir de vos modèles de base de données. Cela facilite la gestion et la visualisation des données sans avoir à créer une interface d'administration personnalisée.
   - **Sécurité intégrée :**  
-    Django intègre de nombreuses fonctionnalités de sécurité par défaut, telles que la protection contre les attaques CSRF (Cross-Site Request Forgery), l'échappement automatique des données pour éviter les attaques XSS (Cross-Site Scripting), etc.
+    Django intègre de nombreuses fonctionnalités de sécurité par défaut, telles que la protection contre les attaques CSRF (Cross-Site Request Forgery), l'échappement automatique des données pour éviter les attaques **XSS** (Cross-Site Scripting), etc.
   - **Système de gestion des URL :**  
     Django propose un système de gestion des URL puissant et flexible, permettant de définir des schémas d'URL lisibles et modulaires.
   - **Extensibilité :**  
