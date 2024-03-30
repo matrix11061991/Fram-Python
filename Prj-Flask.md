@@ -3,8 +3,8 @@
 L'objectif de cette activité pratique est de créer un projet Web simple en utilisant le framework **Flask** en Python. À la fin de cette activité, les participants auront mis en place un serveur Web basique avec quelques routes.
 
 ## Prérequis
-* Python installé sur la machine
-* Connaissance de base en programmation Python
+* Python installé sur la machine.
+* Connaissance de base en programmation Python.
 ## Étapes
 **Étape 1: Installation de Flask**  
 Assurez-vous que **Flask** est installé en exécutant la commande suivante dans votre terminal ou invite de commande :
